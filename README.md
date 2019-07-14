@@ -10,8 +10,8 @@ for Ptime seconds in between each call to Enqueue). Each Consumer thread should 
 not evenly divisible) items from the queue (sleeping for Ctime seconds in between each call to Dequeue). The main program<br/> should create/initialize the Bounded Buffer Queue, print a timestamp, spawn off C consumer threads & P producer threads,<br/> wait for all of the threads to finish and then print off another timestamp & the duration of execution.<br/>
 
 ### Step 1.
-Write high level pseudocode for the Producer and Consumer threads, as well as for the Bounded Buffer Queue <br/>(Enqueue, Dequeue). Use semaphores to describe syn- chronization logic in your pseudocode. You may use the P/V calls to <br/>
-denote locking
+Write high level pseudocode for the Producer and Consumer threads, as well as for the Bounded Buffer Queue <br/>(Enqueue, Dequeue). Use semaphores to describe syn- chronization logic in your pseudocode. You may use the P/V calls to 
+denote locking <br/>
   
 ### Step 2.
 and unlocking of a mutex and signal/wait calls to denote the locking and unlocking of semaphores. Submit this <br/>
@@ -31,13 +31,13 @@ primitives(mutex locks and/or signal semaphores and/or count semaphores) so that
 ∗ X is the number of items each producer thread will produce.<br/>
 ∗ Ptime is the how long (in seconds) each producer thread will sleep after producing an item.<br/>
 ∗ Ctime is the how long (in seconds) each consumer thread will sleep after consuming an item.<br/>
-– Your implementation must maintain N buffers. Size of these buffers can be one which store one integer. Which basically<br/>
+– Your implementation must maintain N buffers. Size of these buffers can be one which store one integer. Which basically
 makes the bounded buffer and 1-Dimensional array of integers. <br/>
-– Your implementation must generate a unique sequence of numbers for the Pro- ducer threads. Then the Consumer threads <br/>
+– Your implementation must generate a unique sequence of numbers for the Pro- ducer threads. Then the Consumer threads 
 should consume the same sequence. <br/>
-– Your implementation must handle when P*X/C is not evenly divisible. For ex- <br/> ampleifP=3andX=5andC=2thenP*X/Cis(5*3)/2whichis7.5. This means one consumer thread consume 1 extra item then the other <br/>
+– Your implementation must handle when P*X/C is not evenly divisible. For ex-  ampleifP=3andX=5andC=2thenP*X/Cis(5*3)/2whichis7.5. This means one consumer thread consume 1 extra item then the other 
 thread.<br/>
-– Each consumer thread must print their thread id and which item they have con- sumed. It may be useful to assign a <br/>
+– Each consumer thread must print their thread id and which item they have con- sumed. It may be useful to assign a 
 readable number to each thread to make things easier. <br/>
 
 
@@ -47,19 +47,19 @@ readable number to each thread to make things easier.<br/>
 – Each producer thread must sleep for Ptime AFTER producing each item.<br/>
 – Must use enqueue item and dequeue item functions given to add and remove<br/>
 items. These need to be implemented as well.<br/>
-– Your implementation must implement a test strategy that shows your program works. A simple approach is to maintain a <br/> consumer array and a producer array. If everything works out these two arrays should be identical and in order(Given <br/>
-enqueue and dequeue are implemented correctly). <br/>
+– Your implementation must implement a test strategy that shows your program works. A simple approach is to maintain a  consumer array and a producer array. If everything works out these two arrays should be identical and in order(Given
+enqueue and dequeue are implemented correctly).
 
 ## Build Instructions
 
-One can use Makefile given along with the source code to compile the program.
-For using Makefille simply exute "make" command in same directory as that of source code.
+One can use Makefile given along with the source code to compile the program. <br/>
+For using Makefille simply exute "make" command in same directory as that of source code. <br/>
 
-To compile manually one can use following command:
+To compile manually one can use following command: <br/>
 
-gcc -I -Wall pandc.c -o pandc -lpthread -g
+gcc -I -Wall pandc.c -o pandc -lpthread -g <br/>
 
-This will create object file named pandc
+This will create object file named pandc <br/>
 
 ### Run Instructions
 Simply run by executing the object file created. <br/>
