@@ -3,11 +3,11 @@
    Nov 29, 2018
 
 ## Project Description: 
-implementing a Producer-Consumer program with a bounded buffer queue of N elements, P producer threads and C consumer<br/> 
-threads  (N, P and C should be command line arguments to your program, along with three additional parameters, X, Ptime <br/>
-and Ctime, that are described below). Each Producer thread should Enqueue X different numbers onto the queue (sleeping <br/>
-for Ptime seconds in between each call to Enqueue). Each Consumer thread should Dequeue P*X/C (be careful when P*X/C is <br/>
-not evenly divisible) items from the queue (sleeping for Ctime seconds in between each call to Dequeue). The main program<br/> should create/initialize the Bounded Buffer Queue, print a timestamp, spawn off C consumer threads & P producer threads,<br/> wait for all of the threads to finish and then print off another timestamp & the duration of execution.<br/>
+implementing a Producer-Consumer program with a bounded buffer queue of N elements, P producer threads and C consumer 
+threads  (N, P and C should be command line arguments to your program, along with three additional parameters, X, Ptime 
+and Ctime, that are described below). Each Producer thread should Enqueue X different numbers onto the queue (sleeping 
+for Ptime seconds in between each call to Enqueue). Each Consumer thread should Dequeue P*X/C (be careful when P*X/C is 
+not evenly divisible) items from the queue (sleeping for Ctime seconds in between each call to Dequeue). The main program should create/initialize the Bounded Buffer Queue, print a timestamp, spawn off C consumer threads & P producer threads, wait for all of the threads to finish and then print off another timestamp & the duration of execution.
 
 ### Step 1.
 Write high level pseudocode for the Producer and Consumer threads, as well as for the Bounded Buffer Queue <br/>(Enqueue, Dequeue). Use semaphores to describe syn- chronization logic in your pseudocode. You may use the P/V calls to 
