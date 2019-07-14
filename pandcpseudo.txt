@@ -1,0 +1,47 @@
+pseudo goes here
+
+Command Line Arguments:
+N: Max element in queue at a given time
+P: No of producer thread
+C: No of comsumer thread
+X: No of elements enqueued by each producer thread
+Ptime: Time for which producer thread sleeps
+Ctime: Time for which consumer thread sleeps
+
+Global Variables:
+Queue 			#holds the data of queue and information like capacity, size, front and rear index
+queue_operation		#Mutex to perform atomic queue
+sync_variable 		#Mutex to perform synchronisation
+
+
+1. Create bounded buffer queue
+2. Print timestamp
+3. Spawn C consumer thread 
+	if thread index != 0
+		Perform following steps ceiling(P*X/C)
+	else
+		Perform following steps (P*X - ceiling(P*X/C) * (C - 1))
+	i) P(queue_operation)
+	ii) If queue is empty retry
+	iii) Dequeue(Queue)
+	iv) Decrease size of Queue
+	v) Adjust front index
+		(queue->front + 1)%queue->capacity;
+	vi) V(queue_operation)
+	vii) Sleep (Ctime)_
+4. Spawn P producer thread
+	P(sync_variable)
+	Perform folloing steps X times
+        i) P(queue_operation)
+	ii) If queue is full retry
+        iii) Enqueue(Queue)
+        iv) increase size of Queue
+        v) Adjust rear index
+		(queue->rear + 1)%queue->capacity;
+        vi) V(queue_operation)
+	vii) Sleep(Ptime)
+	V(sync_variable)
+5. Wait for threads to finish
+6. Print timestamp
+7. Print duration of program
+
